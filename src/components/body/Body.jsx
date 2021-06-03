@@ -17,6 +17,8 @@ import {
 import { StudyCreate } from './study/StudyCreate'
 import { StudyList } from './study/StudyList'
 
+import { List as PatientList, Create as PatientCreate } from './patient/Patient'
+
 export const Body = () => {
   return (
     <Switch>
@@ -30,11 +32,11 @@ export const Body = () => {
       </Route>
     
       <Route exact path="/patient/list">
-        <div>Patient List</div>
+        <PatientList />
       </Route>
 
       <Route exact path="/patient/create">
-        <div>Patient create</div>
+        <PatientCreate />
       </Route>
     </Switch>
   );
