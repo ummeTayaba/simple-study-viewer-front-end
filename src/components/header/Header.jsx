@@ -34,9 +34,6 @@ function Header() {
             <IconButton aria-label="Search database" icon={<ViewIcon />} />
           </Link>
 
-          <Link to="/patient/create">
-            <IconButton aria-label="Search database" icon={<AddIcon />} />
-          </Link>
         </ButtonGroup>
       </Box>
 

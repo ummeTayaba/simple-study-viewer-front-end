@@ -18,8 +18,9 @@ import {
     PopoverArrow,
     PopoverTrigger,
     PopoverCloseButton,
-    PopoverHeader
+    PopoverHeader,
   } from "@chakra-ui/react"
+import { useHistory } from 'react-router-dom';
 
 
 export const StudyList = () => {
@@ -28,6 +29,8 @@ export const StudyList = () => {
         loading: true,
         errorMessage: ""
     })
+
+    const history = useHistory()
 
     useEffect(() => {
         
@@ -65,6 +68,7 @@ export const StudyList = () => {
                     <Th>Study Name</Th>
                     <Th>Study Creation Time(MM/DD/YYYY)</Th>
                     <Th>Study Update Time(MM/DD/YYYY)</Th>
+                    <Th>Edit</Th>
                 </Tr>
             </Thead>
 
@@ -99,7 +103,16 @@ export const StudyList = () => {
                                 <Td>{data.studyName}</Td>
                                 <Td>{new Date(data.studyCreationTime).toLocaleDateString("en-US")}</Td>
                                 <Td>{new Date(data.studyUpdateTime).toLocaleDateString("en-US")}</Td>
-                                
+
+                                <Td>
+                                    <Button onClick={
+                                        () => {
+                                            history.push(`/study/edit/${data.id}`)
+                                        }
+                                    }>
+                                        Edit
+                                    </Button>
+                                </Td>
                             </Tr>
                         )
                     })

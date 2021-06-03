@@ -23,11 +23,19 @@ export const Body = () => {
   return (
     <Switch>
 
+      <Route exact path="/">
+        <Redirect to="/study/list" />
+      </Route>
+
       <Route exact path="/study/list">
         <StudyList />
       </Route>
 
       <Route exact path="/study/create">
+        <StudyCreate />
+      </Route>
+
+      <Route exact path="/study/edit/:id">
         <StudyCreate />
       </Route>
     
