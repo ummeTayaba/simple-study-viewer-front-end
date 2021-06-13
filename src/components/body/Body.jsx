@@ -14,15 +14,17 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { StudyCreate } from './study/StudyCreate'
-import { StudyList } from './study/StudyList'
+import { StudyCreate } from './study/StudyCreate';
+import { StudyList } from './study/StudyList';
 
-import { List as PatientList, Create as PatientCreate } from './patient/Patient'
+import {
+  List as PatientList,
+  Create as PatientCreate,
+} from './patient/Patient';
 
 export const Body = () => {
   return (
     <Switch>
-
       <Route exact path="/">
         <Redirect to="/study/list" />
       </Route>
@@ -38,12 +40,16 @@ export const Body = () => {
       <Route exact path="/study/edit/:id">
         <StudyCreate />
       </Route>
-    
+
       <Route exact path="/patient/list">
         <PatientList />
       </Route>
 
       <Route exact path="/patient/create">
+        <PatientCreate />
+      </Route>
+
+      <Route exact path="/patient/edit/:id">
         <PatientCreate />
       </Route>
     </Switch>
